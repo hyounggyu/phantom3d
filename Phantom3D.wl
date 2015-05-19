@@ -47,7 +47,7 @@ Phantom3DTransformedRegion[args_List]:=Fold[TransformedRegion,#,args]&/@(Phantom
 
 Phantom3DGridPoints[size_Integer,max_:1.]:=Module[{range},
 	range=Range[-max,max,2.0 max/size];
-	If[Last@range==1.,range=Drop[range,-1]];
+	If[Last@range==max,range=Drop[range,-1]];
 	Table[{x,y,z},{z,Reverse@range},{y,Reverse@range},{x,range}]
 ]
 
